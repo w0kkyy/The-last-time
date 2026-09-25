@@ -1,14 +1,68 @@
+/* Ваша палитра из файла style.css */
 body.light-theme {
-  --bg: #fdf2f5;                           /* Главный фон: мягкий пастельно-розовый */
-  --card: #ffffff;                         /* Фон карточек: чистый белый для свежести и контраста */
-  --card-border: rgba(229, 169, 192, 0.3); /* Границы карточек: едва заметная розовая рамка */
-  --accent: #e06b95;                       /* Основной акцент (кнопки, ссылки): нежный розовый */
-  --accent-hover: #c8507a;                 /* Акцент при наведении: более насыщенный розовый */
-  --accent-dim: #fde8ef;                   /* Вспомогательный светлый фон (активные пункты, плашки) */
-  --accent-glow: rgba(224, 107, 149, 0.25);/* Тень и свечение кнопок: мягкий розовый ореол */
-  --danger: #dc2626;                       /* Цвет ошибок/опасностей (остается контрастным красным) */
+  --bg: #fdf2f5;
+  --card: #ffffff;
+  --card-border: rgba(229, 169, 192, 0.3);
+  --accent: #e06b95;
+  --accent-hover: #c8507a;
+  --accent-dim: #fde8ef;
+  --accent-glow: rgba(224, 107, 149, 0.25);
+  --danger: #dc2626;
   --danger-bg: rgba(220, 38, 38, 0.1);
-  --text: #3a2a32;                         /* Текст: темно-сливовый (читается лучше, чем чистый черный, и выглядит мягче) */
-  --muted: #8c7883;                        /* Второстепенный текст: серо-розовый */
-  --input-bg: rgba(224, 107, 149, 0.06);   /* Фон полей ввода: лёгкий розовый оттенок */
+  --text: #3a2a32;
+  --muted: #8c7883;
+  --input-bg: rgba(224, 107, 149, 0.06);
+}
+
+/* --- Применяем переменные к элементам --- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--card-border);
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(224, 107, 149, 0.12);
+  text-align: center;
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 15px var(--accent-glow);
 }
